@@ -24,11 +24,7 @@ class MNPuzzle(Puzzle):
         assert all([len(r) == len(to_grid[0]) for r in to_grid])
         self.n, self.m = len(from_grid), len(from_grid[0])
         self.from_grid, self.to_grid = from_grid, to_grid
-
-    # TODO
-    # implement __eq__ and __str__
-    # __repr__ is up to you
-
+        
     def __eq__(self, other):
         """
         Return whether MNPuzzle self is equivalent to other.
@@ -78,11 +74,6 @@ class MNPuzzle(Puzzle):
             result += "\n"
 
         return result
-
-    # TODO
-    # override extensions
-    # legal extensions are configurations that can be reached by swapping one
-    # symbol to the left, right, above, or below "*" with "*"
 
     def extensions(self):
         """
@@ -158,10 +149,6 @@ class MNPuzzle(Puzzle):
                             t += (tuple(n),)
                         lst.append(MNPuzzle(t, self.to_grid))
         return lst
-
-    # TODO
-    # override is_solved
-    # a configuration is solved when from_grid is the same as to_grid
 
     def is_solved(self):
         """
