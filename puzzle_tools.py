@@ -5,18 +5,13 @@ from puzzle import Puzzle
 from collections import deque
 # set higher recursion limit
 # which is needed in PuzzleNode.__str__
-# uncomment the next two lines on a unix platform, say CDF
+# uncomment the next two lines on a unix platform
 # import resource
 # resource.setrlimit(resource.RLIMIT_STACK, (2**29, -1))
 import sys
 sys.setrecursionlimit(10**6)
 
 
-# TODO
-# implement depth_first_solve
-# do NOT change the type contract
-# you are welcome to create any helper functions
-# you like
 def depth_first_solve(puzzle):
     """
     Return a path from PuzzleNode(puzzle) to a PuzzleNode containing
@@ -84,14 +79,6 @@ def depth_first_solve(puzzle):
     # use _depth_first_solve on puzzle to find first node of solution
     return _depth_first_solve(puzzle)
 
-
-# TODO
-# implement breadth_first_solve
-# do NOT change the type contract
-# you are welcome to create any helper functions
-# you like
-# Hint: you may find a queue useful, that's why
-# we imported deque
 def breadth_first_solve(puzzle):
     """
     Return a path from PuzzleNode(puzzle) to a PuzzleNode containing
