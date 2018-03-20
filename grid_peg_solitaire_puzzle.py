@@ -25,10 +25,6 @@ class GridPegSolitairePuzzle(Puzzle):
         assert all([x == "*" or x == "." or x == "#" for x in marker_set])
         self._marker, self._marker_set = marker, marker_set
 
-    # TODO
-    # implement __eq__, __str__ methods
-    # __repr__ is up to you
-
     def __eq__(self, other):
         """
         Return whether GridPegSolitairePuzzle self is equivalent to other.
@@ -96,11 +92,6 @@ class GridPegSolitairePuzzle(Puzzle):
             result += '\n'
 
         return result
-
-    # TODO
-    # override extensions
-    # legal extensions consist of all configurations that can be reached by
-    # making a single jump from this configuration
 
     def extensions(self):
         """
@@ -200,63 +191,8 @@ class GridPegSolitairePuzzle(Puzzle):
                         new_grid[row][column] = "."
                         lst.append(GridPegSolitairePuzzle(new_grid, {"*", ".",
                                                                      "#"}))
-                # if self._marker[row][column] == '.':
-                #     # two pegs to the left of hole
-                #     if (column - 2) in range(len(self._marker[row])) and \
-                #             self._marker[row][column - 2] == '*' and \
-                #             self._marker[row][column - 1] == '*':
-                #         new_grid = deepcopy(self._marker)
-                #         new_grid[row] = new_grid[row][:column - 2] + \
-                #             [".", ".", "*"] + new_grid[row][column + 1:]
-                #         lst.append(GridPegSolitairePuzzle(new_grid, {"*", ".",
-                #                                                      "#"}))
-                #     # two pegs to the right of hole
-                #     if (column + 2) in range(len(self._marker[row])) and \
-                #             self._marker[row][column + 2] == '*' and \
-                #             self._marker[row][column + 1] == '*':
-                #         new_grid = deepcopy(self._marker)
-                #         new_grid[row] = new_grid[row][:column] + \
-                #             ["*", ".", "."] + new_grid[row][column + 3:]
-                #         lst.append(GridPegSolitairePuzzle(new_grid, {"*", ".",
-                #                                                      "#"}))
-                #     # two pegs above hole
-                #     if (row - 2) in range(len(self._marker)) and \
-                #             self._marker[row - 2][column] == '*' and \
-                #             self._marker[row - 1][column] == '*':
-                #         new_grid = deepcopy(self._marker)
-                #         new_grid[row - 2] = \
-                #             new_grid[row - 2][:column] + \
-                #             ["."] + new_grid[row - 2][column + 1:]
-                #         new_grid[row - 1] = \
-                #             new_grid[row - 1][:column] + \
-                #             ["."] + new_grid[row - 1][column + 1:]
-                #         new_grid[row] = \
-                #             new_grid[row][:column] + \
-                #             ["*"] + new_grid[row][column + 1:]
-                #         lst.append(GridPegSolitairePuzzle(new_grid, {"*", ".",
-                #                                                      "#"}))
-                #     # two pegs below hole
-                #     if (row + 2) in range(len(self._marker)) and \
-                #             self._marker[row + 2][column] == '*' and \
-                #             self._marker[row + 1][column] == '*':
-                #         new_grid = deepcopy(self._marker)
-                #         new_grid[row + 2] = \
-                #             new_grid[row + 2][:column] + \
-                #             ["."] + new_grid[row + 2][column + 1:]
-                #         new_grid[row + 1] = \
-                #             new_grid[row + 1][:column] + \
-                #             ["."] + new_grid[row + 1][column + 1:]
-                #         new_grid[row] = \
-                #             new_grid[row][:column] + \
-                #             ["*"] + new_grid[row][column + 1:]
-                #         lst.append(GridPegSolitairePuzzle(new_grid, {"*", ".",
-                #                                                      "#"}))
 
         return lst
-
-    # TODO
-    # override is_solved
-    # A configuration is solved when there is exactly one "*" left
 
     def is_solved(self):
         """
