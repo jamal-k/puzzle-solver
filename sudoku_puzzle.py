@@ -181,14 +181,6 @@ class SudokuPuzzle(Puzzle):
                  symbols[:i] + [d] + symbols[i + 1:], symbol_set)
                  for d in allowed_symbols])
 
-    # TODO
-    # override fail_fast
-    # Notice that it is not possible to complete a sudoku puzzle if there
-    # is one open position that has no symbols available to put in it.  In
-    # other words, if there is one open position where the symbols already used
-    # in the same row, column, and subsquare exhaust the symbols available,
-    # there is no point in continuing.
-
     def fail_fast(self):
         """
         Return True iff SudokuPuzzle self can never be extended to a solution.
